@@ -24,6 +24,10 @@ const barsOslo = [
         price: 98,
     },
     {
+        bar: 'Preik',
+        price: 106,
+    },
+    {
         bar: 'Blå',
         price: 109,
     }
@@ -34,10 +38,6 @@ const barsSeljord = [
         bar: "Fjellheimpuben",
         price: 95,
     },
-    {
-        bar: 'Preik',
-        price: 106,
-    }
 ]
 
 export default function Layout() {
@@ -47,7 +47,7 @@ export default function Layout() {
             <main>
                 <div>
                     {barsOslo.map(({ bar, price }) => (
-                        <ul className="mx-36">
+                        <ul className="mx-36 mb-4">
                             <li className="flex justify-between font-semibold" key={bar}>
                                 <span>{bar}</span>
                                 <span>{price},-</span>

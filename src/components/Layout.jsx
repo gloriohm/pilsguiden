@@ -43,23 +43,23 @@ const barsSeljord = [
 export default function Layout() {
     return (
         <>
-            <h1 className="flex text-xl font-semibold mx-36">Topplista — Oslo</h1>
+            <h1 className="flex text-2xl font-semibold mb-2">Topplista — Oslo</h1>
             <main>
                 <div>
                     {barsOslo.map(({ bar, price }) => (
-                        <ul className="mx-36">
-                            <li className="flex justify-between font-semibold" key={bar}>
+                        <ul className="mb-1">
+                            <li className="flex justify-between font-semibold border-b-2 border-fuchsia-200" key={bar}>
                                 <span>{bar}</span>
                                 <span>{price},-</span>
                             </li>
                         </ul>
                     ))}
                 </div>
-                <h1 className="flex text-xl font-semibold mx-36 mt-4">Topplista — Seljord</h1>
+                <h1 className="flex text-2xl font-semibold mt-4 mb-2">Topplista — Seljord</h1>
                 <div>
                     {barsSeljord.map(({ bar, price }) => (
-                        <ul className="mx-36">
-                            <li className="flex justify-between font-semibold" key={bar}>
+                        <ul className="mb-1">
+                            <li className="flex justify-between font-semibold border-b-2 border-fuchsia-200" key={bar}>
                                 <span>{bar}</span>
                                 <span>{price},-</span>
                             </li>

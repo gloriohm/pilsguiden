@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 export default function DataFetcher() {
     const [bars, setBars] = useState([]);
-    const [location, setLocation] = useState("Seljord");
+    const [location, setLocation] = useState("Oslo");
     const cities = ["Oslo", "Seljord"];
 
     useEffect(() => {

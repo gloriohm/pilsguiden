@@ -46,25 +46,25 @@ export default function Layout() {
             <h1 className="flex text-2xl font-semibold mb-2">Topplista — Oslo</h1>
             <main>
                 <div>
-                    {barsOslo.map(({ bar, price }) => (
-                        <ul className="mb-1">
+                    <ul className="mb-1">
+                        {barsOslo.map(({ bar, price }) => (
                             <li className="flex justify-between font-semibold border-b-2 border-fuchsia-200" key={bar}>
                                 <span>{bar}</span>
                                 <span>{price},-</span>
                             </li>
-                        </ul>
-                    ))}
+                        ))}
+                    </ul>
                 </div>
                 <h1 className="flex text-2xl font-semibold mt-4 mb-2">Topplista — Seljord</h1>
                 <div>
-                    {barsSeljord.map(({ bar, price }) => (
-                        <ul className="mb-1">
+                    <ul className="mb-1">
+                        {barsSeljord.map(({ bar, price }) => (
                             <li className="flex justify-between font-semibold border-b-2 border-fuchsia-200" key={bar}>
                                 <span>{bar}</span>
                                 <span>{price},-</span>
                             </li>
-                        </ul>
-                    ))}
+                        ))}
+                    </ul>
                 </div>
             </main>
         </>

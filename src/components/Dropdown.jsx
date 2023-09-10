@@ -16,7 +16,7 @@ export default function Dropdown({ price, size, bar, updated }) {
             {dropdownState.open && (<div>
                 <ul className='px-2 text-sm font-medium'>
                     <li>Literspris: {price / size},-</li>
-                    <li>Oppdatert: {updated.slice(0, 19)}</li>
+                    <li>Oppdatert: {updated.slice(0, 10)}</li>
                 </ul>
             </div>
             )}

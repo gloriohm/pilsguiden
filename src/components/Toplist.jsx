@@ -1,6 +1,7 @@
 import DataFetcher from "./DataFetcher";
 
 export default function Toplist() {
+    const bars = DataFetcher(bars)
     return (
         <>
             <ul>

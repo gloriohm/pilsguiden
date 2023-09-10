@@ -1,10 +1,14 @@
 import { client } from '../lib/pocketbase';
 import { useEffect, useState } from 'react';
+import Dropdown from './Dropdown';
 
 export default function DataFetcher() {
     const [bars, setBars] = useState([]);
     const [location, setLocation] = useState("Oslo");
     const cities = ["Oslo", "Seljord"];
+
+    const [dropdownState, setDropdownState] = useState({ open: false })
+    const handleDropdownClick = () => setDropdownState({ open: !dropdownState.open });
 
     useEffect(() => {
         client
@@ -16,6 +20,7 @@ export default function DataFetcher() {
     }, []);
 
     const barsFiltered = bars.filter(({ city }) => city === location);
+    const test = { bar: "Sara", price: 69, size: 0.5 }
     return (
         <>
             <nav>
@@ -28,10 +33,15 @@ export default function DataFetcher() {
                 <h1 className="flex text-2xl font-semibold my-2">Topplista — {location}</h1>
             </nav>
             <ul className="mb-1">
-                {barsFiltered.map(({ bar, price, id }) => (
-                    <li className="flex justify-between font-semibold border-b-2 border-fuchsia-200" key={id}>
-                        <span>{bar}</span>
-                        <span>{price},-</span>
+                {barsFiltered.map(({ bar, price, id, size, updated }) => (
+                    <li className="flex justify-between font-semibold mb-1 border-b-2 border-violet-300" key={id}>
+                        <Dropdown
+                            bar={bar}
+                            price={price}
+                            size={size}
+                            updated={updated}
+                        />
+                        <span>{size}l : {price},-</span>
                     </li>
                 ))}
             </ul>

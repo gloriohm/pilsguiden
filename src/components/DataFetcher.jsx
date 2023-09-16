@@ -1,5 +1,5 @@
-import { client } from '../lib/pocketbase';
 import { useEffect, useState } from 'react';
+import { client } from '../lib/pocketbase';
 import Dropdown from './Dropdown';
 
 export default function DataFetcher() {
@@ -23,6 +23,9 @@ export default function DataFetcher() {
     const test = { bar: "Sara", price: 69, size: 0.5 }
     return (
         <>
+            <div>
+                <h1 className="text-2xl font-bold mb-8">Din ultimate guide til pilspriser</h1>
+            </div>
             <nav>
                 <h2 className="font-semibold">Velg sted:</h2>
                 <ul className='flex gap-2 font-extrabold my-2'>
@@ -30,7 +33,7 @@ export default function DataFetcher() {
                         <li className="hover:bg-violet-300 bg-amber-200 rounded-md p-1 cursor-pointer" key={city} onClick={() => setLocation(city)}>{city}</li>
                     ))}
                 </ul>
-                <h1 className="flex text-2xl font-semibold my-2">Topplista — {location}</h1>
+                <h1 className="flex text-2xl font-semibold my-2">Ølpriser — {location}</h1>
             </nav>
             <ul className="mb-1">
                 {barsFiltered.map(({ bar, price, id, size, updated }) => (
@@ -41,7 +44,7 @@ export default function DataFetcher() {
                             size={size}
                             updated={updated}
                         />
-                        <span>{size}l : {price},-</span>
+                        <span className="text-left">{size}l : {price},-</span>
                     </li>
                 ))}
             </ul>

@@ -7,18 +7,18 @@ import { Route, Routes } from 'react-router-dom';
 function App() {
   return (
     <>
-      <header className=' bg-amber-200 py-3 mb-8'>
-        <div className='m-auto max-w-xl'>
+      <header className='bg-amber-200 py-3 mb-8'>
+        <div className='m-auto max-w-xl max-sm:px-4'>
           <NavBar />
         </div>
       </header>
-      <main className='px-1 m-auto max-w-xl'>
+      <main className='px-1 m-auto max-w-xl max-sm:px-4'>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/om-oss" element={<About />} />
         </Routes>
       </main>
-      <div className='px-1 text-sm my-16 m-auto max-w-xl'>
+      <div className='px-1 text-sm my-16 m-auto max-w-xl max-sm:px-4'>
         <Footer />
       </div>
     </>

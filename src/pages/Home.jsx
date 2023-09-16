@@ -1,7 +1,6 @@
 import Fetcher from "../components/Fetcher";
-import DropdownCard from "../components/DropdownCard";
+import Toplist from "../components/Toplist";
 import { useState } from 'react';
-import Filter from "../components/Filter";
 
 export default function Home() {
     const bars = Fetcher()
@@ -18,7 +17,6 @@ export default function Home() {
     });
 
     const handleClick = () => setSort(!sort);
-    console.log(sort);
 
     return (
         <>
@@ -37,36 +35,7 @@ export default function Home() {
                 </button>
                 <h1 className="flex text-2xl font-semibold my-2">Ølpriser — {location}</h1>
             </nav>
-            <ul>
-                {sort == false ? barsFiltered.map(({ bar, price, id, size, updated, pint }) => (
-                    <li className="font-semibold mb-2 border-b-2 border-violet-300" key={id}>
-                        <details>
-                            <summary className="flex justify-between cursor-pointer">
-                                <span>{bar}</span>
-                                {price === pint ? <span>{pint},-</span> : <span>*{pint},-</span>}
-                            </summary>
-                            <DropdownCard
-                                price={price}
-                                size={size}
-                                updated={updated} />
-                        </details>
-                    </li>
-                )) :
-                    barsAlphaSorted.map(({ bar, price, id, size, updated, pint }) => (
-                        <li className="font-semibold mb-2 border-b-2 border-violet-300" key={id}>
-                            <details>
-                                <summary className="flex justify-between cursor-pointer">
-                                    <span>{bar}</span>
-                                    {price === pint ? <span>{pint},-</span> : <span>*{pint},-</span>}
-                                </summary>
-                                <DropdownCard
-                                    price={price}
-                                    size={size}
-                                    updated={updated} />
-                            </details>
-                        </li>
-                    ))}
-            </ul>
+            {sort == false ? <Toplist barList={barsFiltered} /> : <Toplist barList={barsAlphaSorted} />}
             <p>* Indikerer at pris er justert til halviter. Klikk på baren for å se mer informasjon</p>
         </>
     )

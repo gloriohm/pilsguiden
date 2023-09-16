@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Fetcher from "./Fetcher";
 
 export default function Filter() {

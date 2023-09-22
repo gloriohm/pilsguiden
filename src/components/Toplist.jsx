@@ -8,7 +8,7 @@ export default function Toplist({ barList }) {
                     <details>
                         <summary className="flex justify-between cursor-pointer">
                             <span>{bar}</span>
-                            {price === pint ? <span>{pint},-</span> : <span>*{pint},-</span>}
+                            {price === pint ? <span>{price},-</span> : <span>*{pint},-</span>}
                         </summary>
                         <DropdownCard
                             price={price}

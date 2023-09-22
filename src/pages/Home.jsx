@@ -1,9 +1,9 @@
-import Fetcher from "../components/Fetcher";
+import { barsPintedSorted } from "../lib/pocketbase";
 import Toplist from "../components/Toplist";
 import { useState } from 'react';
 
 export default function Home() {
-    const bars = Fetcher()
+    const bars = barsPintedSorted
     const cities = ["Oslo", "Seljord", "Bø"];
     const [location, setLocation] = useState("Oslo");
     const [sort, setSort] = useState(false)
